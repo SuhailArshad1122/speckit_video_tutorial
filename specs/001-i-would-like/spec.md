@@ -83,7 +83,7 @@ As a personal user, I want to track my daily expenses with relevant details so t
   - Total expenses for the current month
   - Breakdown of expenses by category
   - Recent transactions list (last 10 entries)
-- **FR-005**: System MUST persist all expense data between sessions
+- **FR-005**: System MUST persist all expense data between sessions using browser local storage (no server-side storage)
 - **FR-006**: System MUST validate input data (e.g., positive amounts, valid dates)
 - **FR-007**: System MUST provide visual feedback for all user actions (success/error messages)
 - **FR-008**: System MUST allow filtering expenses by date range and category
@@ -94,7 +94,7 @@ As a personal user, I want to track my daily expenses with relevant details so t
   - amount: Numeric value of the expense (positive number)
   - date: Date when the expense occurred
   - category: Predefined category (e.g., Food, Transportation, Entertainment)
-  - description: Optional text description
+  - description: Optional text description (max 100 characters)
   - createdAt: Timestamp when the record was created
   - updatedAt: Timestamp when the record was last modified
 
@@ -122,8 +122,11 @@ As a personal user, I want to track my daily expenses with relevant details so t
 
 ### Additional Notes
 - No user authentication is required as per requirements
-- All data will be stored locally in the browser
+- Data will be stored locally in the browser's local storage (no server-side storage)
+- Maximum of 1,000 expense entries will be supported
 - The application should be responsive and work on both desktop and mobile devices
+- Basic accessibility support (screen readers, keyboard navigation)
+- All dates and times will use the device's local timezone
 - [ ] Dependencies and assumptions identified
 
 ---
